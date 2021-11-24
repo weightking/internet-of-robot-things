@@ -1,0 +1,73 @@
+// aside
+.aside.fl
+    ul.menu.list-unstyled
+        li
+            if currentLink == 'log'
+                a.item.active(href='/admin/log')
+                    span.glyphicon.glyphicon-th-list
+                    |                   users log
+            else
+                a.item(href='/admin/log')
+                    span.glyphicon.glyphicon-th-list
+                    |                   users log
+        if userInfo.role=='admin'
+            li
+                if currentLink=='user'
+                    a.item.active(href='/admin/adminPage')
+                        span.glyphicon.glyphicon-user
+                        |                   users administration
+                else
+                    a.item(href='/admin/adminPage')
+                        span.glyphicon.glyphicon-user
+                        |                   users administration
+        li
+            if currentLink=='temperature'
+                a.item.active(href='/admin/temperatureId/Sensor1')
+                    span.glyphicon.glyphicon-fire
+                    | 					temperature & humidity
+            else
+                a.item(href='/admin/temperatureId/Sensor1')
+                    span.glyphicon.glyphicon-fire
+                    |                    temperature & humidity
+        li
+            if currentLink=='gas'
+                a.item.active(href='/admin/gasQualityId/Sensor2')
+                    span.glyphicon.glyphicon-tree-deciduous
+                    |                   gas quality
+            else
+                a.item(href='/admin/gasQualityId/Sensor2')
+                    span.glyphicon.glyphicon-tree-deciduous
+                    |                   gas quality
+        li
+            if currentLink=='water'
+                a.item.active(href='/admin/waterSensorId/Sensor3')
+                    span.glyphicon.glyphicon-tint
+                    |                   water flow rate
+            else
+                a.item(href='/admin/waterSensorId/Sensor3')
+                    span.glyphicon.glyphicon-tint
+                    |                   water flow rate
+        if userInfo.role=='admin'
+            li
+                if currentLink=='robot'
+                    a.item.active(href='/admin/robotsId/Robot1')
+                        span.glyphicon.glyphicon-wrench
+                        | 			  	    robot operation
+                else
+                    a.item(href='/admin/robotsId/Robot1')
+                        span.glyphicon.glyphicon-wrench
+                        |                    robot operation
+        if userInfo.role == 'admin'
+            li
+                if currentLink == 'spot'
+                    a.item.active(href='/admin/spotsId/Spot1')
+                        span.glyphicon.glyphicon-knight
+                        |                    spot operation
+                else
+                    a.item(href='/admin/spotsId/Spot1')
+                        span.glyphicon.glyphicon-knight
+                        |                    spot operation
+    .cprt
+        | Powered by
+        a(href='https://6th-sense-technology.com/about-us.html' target='_blank')  6th Sense Project
+// aside

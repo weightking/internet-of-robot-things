@@ -1,0 +1,37 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            // 分类标题
+            .title
+                //h4 5b9a716cb2d2bf17706bcc0a
+                p.tips #{message}
+            // /分类标题
+            //enctype attribute define the format of data to the server, multipart/form-data is the binary format as the existence of file upload
+            form.form-container(action='/admin/log-add' method='post' enctype='multipart/form-data')
+                .form-group
+                    label title
+                    input.form-control(type='text' placeholder='please input title' name='title')
+                .form-group
+                    label author
+                    input.form-control(type='text' name='author' value=userInfo.username)
+                .form-group
+                    label publish time
+                    input.form-control(type='date' name='publishDate')
+                .form-group
+                    label cover
+                    input(type='file' name='cover' id='file')
+                    .thumbnail-waper
+                        img.img-thumbnail(src='' id='preview')
+                .form-group
+                    label content
+                    textarea.form-control(name='content' id='editor')
+                .buttons
+                    input.btn.btn-primary(type='submit' value='Add')
+block script
+    script(src="/admin/lib/ckeditor5/ckeditor.js")
+    script(src="/javascripts/log-add.js")

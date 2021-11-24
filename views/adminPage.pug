@@ -1,0 +1,61 @@
+extends common/layout1
+
+block main
+        include common/header
+        // 主体内容
+        .content
+            include common/aside
+            .main
+                // 分类标题
+                .title
+                    h4 users
+                    span users list
+                    a.btn.btn-primary.new(href='/admin/user-add') add new user
+                table.table.table-striped.table-bordered.table-hover.custom-table
+                    thead
+                        tr
+                            th ID
+                            th username
+                            th email
+                            th role
+                            th status
+                            th
+                    tbody
+                        each ele in users.records
+                            tr
+                                td #{ele._id}
+                                td #{ele.username}
+                                td #{ele.email}
+                                td #{ele.role}
+                                td #{ele.state==0?'active':'forbidden'}
+                                td
+                                    a.glyphicon.glyphicon-edit(href='/admin/user-edit?id='+ele._id)
+                                    i.glyphicon.glyphicon-remove.delete(data-toggle='modal' data-target='.confirm-modal' id=ele._id)
+                ul.pagination
+                    if users.page>1
+                        li
+                            a(href='/admin/adminPage?page='+(users.page-1))
+                                span &laquo;
+                    each ele in users.display
+                        li
+                            a(href='/admin/adminPage?page='+ele) #{ele}
+                    if users.page<users.total
+                        li
+                            a(href='/admin/adminPage?page='+(users.page+1))
+                                span &raquo;
+        .modal.fade.confirm-modal
+            .modal-dialog.modal-lg
+                form.modal-content(action='/admin/user-delete' method='post')
+                    .modal-header
+                        button.close(type='button' data-dismiss='modal')
+                            span &times;
+                        h4.modal-title confirm
+                    .modal-body
+                        p confirm to delete this user
+                        input(type='hidden' name='id' id='deletUserId')
+                    .modal-footer
+                        button.btn.btn-default(type='button' data-dismiss='modal') cancel
+                        input.btn.btn-primary(type='submit')
+
+block script
+    script(src="/javascripts/adminPage.js")

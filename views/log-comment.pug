@@ -1,0 +1,34 @@
+extends common/layoutComment
+
+block link
+    link(rel='stylesheet' href='/home/css/article.css')
+block main
+    include common/headerComment
+             //主体内容
+    .article
+        .w1100
+            .container
+                .article-header
+                    h3.article-title #{log.title}
+                    .article-info
+                        span.author #{log.author.username}
+                        span #{dateFormat(log.publishDate, 'dd/mm/yyyy')}
+                .article-content
+                    !=log.content
+                .article-comment
+                    h4 Comment
+                    form.comment-form(action='/admin/log-comment' method='post')
+                        textarea.comment(name='content')
+                        input(type='hidden' name='uid' value=userInfo._id)
+                        input(type='hidden' name='aid' value=log._id)
+                        .items
+                            input(type='submit' value='Submit')
+                    .comment-list
+                        if comment
+                            each ele in comment
+                                .mb10
+                                    .article-info
+                                        span.author #{ele.uid.username}
+                                        span #{dateFormat(ele.time,'dd/mm/yyyy')}
+                                    .comment-content
+                                        | #{ele.content}

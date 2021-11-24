@@ -1,0 +1,143 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            .container-fluid
+                .row
+                    h4.text-primary(style="text-align: center;") Operation
+                .clearfix(style='margin-bottom: 30px;')
+                .row
+                    .col-md-4.col-sm-4
+                        button#StandHigher-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 100px;')
+                            .glyphicon.glyphicon-chevron-up
+                    .col-md-4.col-sm-4
+                        button#PowerOff-Spot.btn.btn-primary(type='button' style='margin-left: 52px;') Turn off
+                        button.btn.btn-secondary(type='button' style='margin-left: 8px;') Power
+                        button#PowerOn-Spot.btn.btn-primary(type='button' style='margin-left: 8px') Turn on
+                    .col-md-4.col-sm-4
+                        button#MoveForward-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 150px;')
+                            .glyphicon.glyphicon-chevron-up
+                .clearfix(style='margin-bottom: 8px;')
+                .row
+                    .col-md-4.col-sm-4
+                        button#TurnLeft-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 62px;')
+                            .glyphicon.glyphicon-chevron-left
+                        button#StandNormal-Spot.btn.btn-sedondary.fixButton.btn-sm(type="button" style='margin-left:8px;') M
+                        button#TurnRight-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left:8px;')
+                            .glyphicon.glyphicon-chevron-right
+                    .col-md-4.col-sm-4
+                        button#SitDown-Spot.btn.btn-primary(type='button' style='margin-left: 45px;') Sit down
+                        button.btn.btn-secondary(type='button' style='margin-left: 8px;') Stand
+                        button#StandUp-Spot.btn.btn-primary(type='button' style='margin-left: 8px;') Stand up
+                    .col-md-4.col-sm-4
+                        button#StrafeLeft-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 112px;')
+                            .glyphicon.glyphicon-chevron-left
+                        button#Park-Spot.btn.btn-sedondary.fixButton.btn-sm(type="button" style='margin-left:8px;') P
+                        button#StrafeRight-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left:8px;')
+                            .glyphicon.glyphicon-chevron-right
+                .clearfix(style='margin-bottom: 8px;')
+                .row
+                    .col-md-4.col-sm-4
+                        button#StandLower-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 100px;')
+                            .glyphicon.glyphicon-chevron-down
+                    .col-md-4.col-sm-4
+                        button#SpeedDecrease-Spot.btn.btn-primary(type='button' style='margin-left: 46px;') Decrease
+                        button.btn.btn-secondary(type='button' style='margin-left: 8px;') Speed
+                        button#SpeedIncrease-Spot.btn.btn-primary(type='button' style='margin-left: 8px') Increase
+                    .col-md-4.col-sm-4
+                        button#MoveBackward-Spot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-left: 150px;')
+                            .glyphicon.glyphicon-chevron-down
+                .clearfix(style='margin-bottom: 50px;')
+                .row
+                    .col-md-6
+                        h4.text-primary(style="text-align: center;") Navigation
+                    .col-md-6
+                        h4.text-primary(style="text-align: center;") Camera View
+                .clearfix(style='margin-bottom: 15px;')
+                .row
+                    .col-md-6
+                        button#Navigation-Autonomous.btn.btn-secondary(type='button' style='margin-left: 130px;') Autonomous
+                        button#Navigation-Monitor.btn.btn-secondary(type='button' style='margin-left: 20px;') Monitor
+                        button#Navigation-Manually.btn.btn-secondary(type='button' style='margin-left: 20px;') Manually
+                    .col-md-6
+                        button#FrontLeftImage-Spot.btn.btn-secondary(type='button' style='margin-left: 170px;') Front-Left
+                        button#FrontRightImage-Spot.btn.btn-secondary(type='button' style='margin-left: 10px;') Front-Right
+                .clearfix(style='margin-bottom: 10px;')
+                .row
+                    .col-md-6
+                        .row
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px; padding-left: 25px; padding-right: 25px;') PF2: Polishing Filter
+                            button#Navigation-Product-Vessel.btn.btn-primary(type='button' style='margin-left: 10px; padding-left: 29px; padding-right: 29px;') PV1: Product Vessel
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px; padding-left: 25px; padding-right: 25px;') DI1: De-Ioniser
+                        .clearfix(style='margin-bottom: 16px;')
+                        .row
+                            button.btn.btn-primary(type='button' style='margin-left: 10px; padding-left: 25px; padding-right: 25px;') PHE2: Condenser
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px; padding-left: 26px; padding-right: 26px;') PHE1: Heat Exchanger
+                            button.btn.btn-primary(type='button' style='margin-left: 10px;padding-left: 25px; padding-right: 25px;') CV1: Conveyor
+                        .clearfix(style='margin-bottom: 16px;')
+                        .row
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px;') C1: Adsorption Column
+                            button.btn.btn-primary(type='button' style='margin-left: 10px;') P1: Recirculation Pump1
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px;') PF1B: Process Filter2
+                        .clearfix(style='margin-bottom: 16px;')
+                        .row
+                            button.btn.btn-primary(type='button' style='margin-left: 10px; padding-left: 20px; padding-right: 20px;') P1B: Process Pump2
+                            button#Navigation-Reactor.btn.btn-secondary(type='button' style='margin-left: 10px; padding-left: 41px; padding-right: 41px;') RV1: Reactor
+                            button.btn.btn-primary(type='button' style='margin-left: 10px; padding-left: 20px; padding-right: 20px;') HV1: Heating Vessel
+                        .clearfix(style='margin-bottom: 16px;')
+                        .row
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px;') PF1A: Process Filter1
+                            button#Navigation-Process-Pump1.btn.btn-primary(type='button' style='margin-left: 10px; padding-left: 18px; padding-right: 18px;') P1A: Process Pump1
+                            button.btn.btn-secondary(type='button' style='margin-left: 10px;') P2: Recirculation Pump2
+                    .col-md-6
+                        #mjpeg(style='margin-left: 20%;')
+                .clearfix(style='margin-bottom: 10px;')
+                    .col-md-6
+                        button#Origin.btn.btn-secondary(type='button' style='margin-left: 130px;') Origin
+                        button#Reset.btn.btn-secondary(type='button' style='margin-left: 20px;') Reset
+                        button#Acknowledge.btn.btn-secondary(type='button' style='margin-left: 20px;') Acknowledge
+                    .col-md-6
+                        button#LeftImage-Spot.btn.btn-primary(type='button' style='margin-left: 123px;') Left-sight
+                        button#BackImage-Spot.btn.btn-secondary(type='button' style='margin-left: 10px;') Back-sight
+                        button#RightImage-Spot.btn.btn-primary(type='button' style='margin-left: 10px;') Right-sight
+                //.row(style='padding-left: 50%')
+                //    button#AccMoveForward-Robot.btn.btn-primary.fixButton.btn-sm(type="button") I
+                //.clearfix(style='margin-bottom: 8px;')
+                //.row(style='padding-left: 50%')
+                //    button#NormalMoveForward-Robot.btn.btn-primary.fixButton.btn-sm(type="button")
+                //        .glyphicon.glyphicon-chevron-up
+                //.clearfix(style='margin-bottom: 8px;')
+                //.row(style='padding-left: 42.9%')
+                //    button#AccTurnLeft-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;') J
+                //    button#NormalTurnLeft-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;')
+                //        .glyphicon.glyphicon-chevron-left
+                //    button#Park-Robot.btn.btn-sedondary.fixButton.btn-sm(type="button" style='margin-right: 8px;') P
+                //    button#NormalTurnRight-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;')
+                //        .glyphicon.glyphicon-chevron-right
+                //    button#AccTurnRight-Robot.btn.btn-primary.fixButton.btn-sm(type="button") L
+                //.clearfix(style='margin-bottom: 8px;')
+                //.row(style='padding-left: 50%')
+                //    button#NormalMoveBack-Robot.btn.btn-primary.fixButton.btn-sm(type="button")
+                //        .glyphicon.glyphicon-chevron-down
+                //.clearfix(style='margin-bottom: 8px;')
+                //.row(style='padding-left: 50%')
+                //    button#AccMoveBack-Robot.btn.btn-primary.fixButton.btn-sm(type="button") K
+                //.clearfix(style='margin-bottom: 30px;')
+                //.row
+                //    .col-md-6
+                //        h4.text-primary(style="text-align: center;") Navigation
+                //    .col-md-6
+                //        h4.text-primary(style="text-align: center;") Camera View
+                //.clearfix(style='margin-bottom: 30px;')
+                //.row
+                //    .col-md-6
+                //        #nav(style='margin-left: 20%;')
+                //    .col-md-6
+                //        #mjpeg(style='margin-left: 20%;')
+
+block script
+    script(src="/javascripts/spotOperation.js")

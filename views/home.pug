@@ -1,0 +1,101 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title IoRT
+    link(rel='stylesheet' href='/home/css/base.css')
+    link(rel='stylesheet' href='/home/css/index.css')
+    link(rel="shortcut icon" href="#")
+// 头部框架开始
+.header
+    .w1100
+        // 网站logo开始
+        h1.logo.fl
+            a(href='https://www.surrey.ac.uk/')
+                img(src='/home/images/UniversityLogo.png' alt='University of Surrey logo')
+        h1.logo.fl(style='margin-left: 15px;')
+            a(href='https://www.surrey.ac.uk/surrey-space-centre/research-groups/star-lab')
+                img(src='/home/images/STARLABLogo1.png' alt='Surrey space logo logo')
+        // 网站logo结束
+        // 网站导航开始
+        ul.navigation.fr
+            li
+                a.active(href='/home') Home
+            li
+                a(href='/admin/login') Login
+        // 网站导航结束
+// 头部框架结束
+// 文章列表开始
+ul.list.w1100
+    li.fl
+        a.thumbnail(href='article.html')
+            img(src='images/1.png')
+        .content
+            a.article-title(href='article.html') A service-oriented cloud IoRT framework for anomalies detection and prediction in industrial plant
+            .article-info
+                span.author D.Zhang, S.Gu, Y. Gao
+                span 30/03/2021
+            .brief
+                | Autonomous robots are smart machines capable of performing complex and repetitive tasks with a high of independence from human intervention...
+    li.fr
+        a.thumbnail(href='article.html')
+            img(src='images/2.png')
+        .content
+            a.article-title(href='article.html')
+                | Internet of Robotic Things: Concept, Technologies, and Challenges
+            .article-info
+                span.author P.P.Ray
+                span 27/01/2017
+            .brief
+                | Internet of Things allow massive number of uniquely addressable ‘‘things’’ to communicate with each other and transfer data over existing internet or compatible network protocols. This paper proposes...
+    li.fl
+        a.thumbnail(href='article.html')
+            img(src='images/3.png')
+        .content
+            a.article-title(href='article.html') Process fault diagnosis with model- and knowledge-based approaches: Advances and opportunities
+            .article-info
+                span.author W.J.Li, H.Li, S.Gu, T. Chen
+                span 12/2020
+            .brief
+                | Fault diagnosis plays a vital role in ensuring safe and efficient operation of modern process plants. Despite the encouraging progress in its research...
+    li.fr
+        a.thumbnail(href='article.html')
+            img(src='images/4.gif')
+        .content
+            a.article-title(href='article.html')
+                | A pattern matching and active simulation method for process fault diagnosis
+            .article-info
+                span.author W.J.Li, S.Gu, X.P.Zhang, T.Chen
+                span 08/06/2020
+            .brief
+                | Fault detection and diagnosis is a crucial approach to ensure safe and efficient operation of chemical processes. This paper reports a new fault diagnosis method that exploits dynamic process simulation...
+    li.fl
+        a.thumbnail(href='article.html')
+            img(src='images/5.png')
+        .content
+            a.article-title(href='article.html') Transfer learning for process fault diagnosis: Knowledge transfer from simulation to physical processes
+            .article-info
+                span.author W.J.Li, S.Gu, X.P.Zhang, T.Chen
+                span 04/08/2020
+            .brief
+                | Deep learning has shown great promise in process fault diagnosis. However, due to the lack of sufficient labelled fault data, its application has been...
+    li.fr
+        a.thumbnail(href='article.html')
+            img(src='images/6.png')
+        .content
+            a.article-title(href='article.html') Industry 4.0, a revolution that requires technology and national strategies
+            .article-info
+                span.author F.W.Yang, S.Gu
+                span 27/01/2021
+            .brief
+                | Since 2011, when the concepts of Industry 4.0 were first announced, this industrial revolution has grown and expanded from some theoretical concepts to real-world applications. Its practicalities can be found in many...
+// 文章列表结束
+// 分页开始
+.page.w1100
+    a(href='#') <
+    a.active(href='#') 1
+    a(href='#') 2
+    a(href='#') 3
+    a(href='#') 4
+    a(href='#') 5
+    a(href='#') >
+// 分页结束

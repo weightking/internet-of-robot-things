@@ -1,0 +1,32 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            .container-fluid
+                .row
+                    .col-md-6.col-sm-6
+                        .btn-group.positionControl(role='group' aria-label='Basic mixed styles example')
+                            button#close-led.btn.btn-primary(type='button') turn off
+                            button.btn.btn-secondary(type='button') Light
+                            button#open-led.btn.btn-primary(type='button') turn on
+                    .col-md-6.col-sm-6
+                        .btn-group.positionControl(role='group' aria-label='Basic mixed styles example')
+                            button#turn-left.btn.btn-primary(type='button') turn left
+                            button.btn.btn-secondary(type='button') Motor
+                            button#turn-right.btn.btn-primary(type='button') turn right
+                .clearfix(style='margin-bottom: 150px;')
+                .row
+                    .col-md-6.col-sm-6
+                        #main(style="width: 100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+                    .col-md-6.col-sm-6
+                        #main1(style="width:100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+
+block script
+    script(src="/javascripts/echarts.min.js")
+    script(src="/javascripts/indexTemperature.js")
+
+

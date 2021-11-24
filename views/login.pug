@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title Demo2
+        // absolute path
+        link(rel='stylesheet' href='/admin/lib/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet' href='/admin/css/base.css')
+        link(rel="shortcut icon" href="#")
+    body
+        .login-body
+            .login-container
+                h4.title IoRT-system
+                .login
+                    form#loginForm(action='/admin/login',method='post')
+                        .form-group
+                            label Email
+                            input.form-control(name='email' type='email' placeholder='please input email')
+                        .form-group
+                            label Password
+                            input.form-control(name='password' type='password' placeholder='please input password')
+                        button.btn.btn-primary(type='submit') Login
+                .tips
+        script(src='/admin/lib/jquery/dist/jquery.min.js')
+        script(src='/admin/lib/bootstrap/js/bootstrap.min.js')
+        script(src='/admin/js/common.js')
+        script(type='text/javascript').
+            $('#loginForm').on('submit',function(){
+                let f = serializeToJson($(this))
+                if (f.email.trim().length == 0){
+                    alert('please input email address')
+                    return false
+                }
+                if (f.password.trim().length == 0){
+                    alert('please input password')
+                    return false
+                }
+            })

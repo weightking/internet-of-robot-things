@@ -1,0 +1,23 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            .container-fluid
+                .row
+                    .col-md-6.col-sm-6
+                        #main(style="width: 100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+                    .col-md-6.col-sm-6
+                        #main1(style="width: 100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+                .clearfix(style='margin-bottom: 60px;')
+                .row
+                    .col-md-6.col-sm-6
+                        #main2(style="width: 100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+                    .col-md-6.col-sm-6
+                        #main3(style="width: 100%; height: 40vh; padding-left: 10%; padding-right: 10%;")
+block script
+    script(src="/javascripts/echarts.min.js")
+    script(src="/javascripts/indexWaterSensor.js")

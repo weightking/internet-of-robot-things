@@ -1,0 +1,11 @@
+extends common/layout1
+
+block main
+    p.bg-danger.error #{msg}
+
+block script
+    script(type='text/javascript').
+        setTimeout(function () {
+            location.href = '/login'
+        }, 3000)
+

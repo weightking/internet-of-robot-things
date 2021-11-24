@@ -1,0 +1,43 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            // 分类标题
+            .title
+                h4 user id: #{user._id}
+                p.tips #{message}
+            // /分类标题
+            form.form-container(action='/admin/user-edit?id='+user._id method='post')
+                .form-group
+                    label username
+                    input.form-control(type='text' placeholder='please input username' name='username' value=''+user.username)
+                .form-group
+                    label email
+                    input.form-control(type='email' placeholder='please input email address',name='email' value=''+user.email)
+                .form-group
+                    label password
+                    input.form-control(type='password' placeholder='please input password',name='password')
+                .form-group
+                    label role
+                    select.form-control(name='role')
+                        if user.role=='normal'
+                            option(value='normal' selected) normal
+                            option(value='admin') admin
+                        else
+                            option(value='normal') normal
+                            option(value='admin' selected) admin
+                .form-group
+                    label status
+                    select.form-control(name='state')
+                        if user.state==0
+                            option(value='0' selected) active
+                            option(value='1') forbidden
+                        else
+                            option(value='0') active
+                            option(value='1' selected) forbidden
+                .buttons
+                    input.btn.btn-primary(type='submit' value='Edit')

@@ -1,0 +1,21 @@
+// 头部
+.header
+    // 网站标志
+    .logo.fl
+        | IoRT-system
+    // /网站标志
+    // 用户信息
+    .info
+        .titleEquipment.fl
+            | #{title}
+        .profile.dropdown.fr
+            span.btn.dropdown-toggle(data-toggle='dropdown')
+                | #{userInfo.username}
+                span.caret
+            ul.dropdown-menu
+                li
+                    a(href='/admin/user-edit?id='+userInfo._id) person
+                li
+                    a(href='/admin/logout') logout
+    // /用户信息
+// /头部

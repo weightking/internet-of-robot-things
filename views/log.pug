@@ -1,0 +1,59 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            // 分类标题
+            .title
+                h4 log
+                span log list
+                a.btn.btn-primary.new(href='/admin/log-add') add new log
+            table.table.table-striped.table-bordered.table-hover.custom-table
+                thead
+                    tr
+                        th ID
+                        th title
+                        th publish time
+                        th author
+                        th
+                tbody
+                    each ele in logs.records
+                        tr
+                            td #{ele._id}
+                            td #{ele.title}
+                            td #{dateFormat(ele.publishDate,'dd/mm/yyyy')}
+                            td #{ele.author.username}
+                            td
+                                a.glyphicon.glyphicon-edit(href='/admin/log-comment?id='+ele._id)
+                                i.glyphicon.glyphicon-remove.delete(data-toggle='modal' data-target='.confirm-modal' id=ele._id)
+            ul.pagination
+                if logs.page>1
+                    li
+                        a(href='/admin/log?page='+(logs.page-1))
+                            span &laquo;
+                each ele in logs.display
+                    li
+                        a(href='/admin/log?page='+ele) #{ele}
+                if logs.page<logs.total
+                    li
+                        a(href='/admin/log?page='+(logs.page+1))
+                            span &raquo;
+    .modal.fade.confirm-modal
+        .modal-dialog.modal-lg
+            form.modal-content(action='/admin/log-delete' method='post')
+                .modal-header
+                    button.close(type='button' data-dismiss='modal')
+                        span &times;
+                    h4.modal-title confirm
+                .modal-body
+                    p confirm to delete this log
+                    input(type='hidden' name='id' id='deletUserId')
+                .modal-footer
+                    button.btn.btn-default(type='button' data-dismiss='modal') cancel
+                    input.btn.btn-primary(type='submit')
+
+block script
+    script(src="/javascripts/adminPage.js")

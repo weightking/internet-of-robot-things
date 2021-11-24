@@ -1,0 +1,13 @@
+// 头部
+.header
+    // 网站标志
+    .w1100
+        h1.logo.fl
+            a(href='https://www.surrey.ac.uk/')
+                img(src='/home/images/UniversityLogo.png' alt='University of Surrey logo')
+
+        ul.navigation.fr
+            li
+                a.active(href='/home') #{userInfo.username}
+            li
+                a(href='/admin/logout') Logout

@@ -1,0 +1,95 @@
+extends common/layout1
+
+block main
+    include common/header
+    // 主体内容
+    .content
+        include common/aside
+        .main
+            .container-fluid
+                .row
+                    h4.text-primary(style="text-align: center;") Operation
+                .clearfix(style='margin-bottom: 30px;')
+                .row(style='padding-left: 50%')
+                    button#AccMoveForward-Robot.btn.btn-primary.fixButton.btn-sm(type="button") I
+                .clearfix(style='margin-bottom: 8px;')
+                .row(style='padding-left: 50%')
+                    button#NormalMoveForward-Robot.btn.btn-primary.fixButton.btn-sm(type="button")
+                        .glyphicon.glyphicon-chevron-up
+                .clearfix(style='margin-bottom: 8px;')
+                .row(style='padding-left: 42.9%')
+                    button#AccTurnLeft-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;') J
+                    button#NormalTurnLeft-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;') <
+                    button#Park-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;') P
+                    button#NormalTurnRight-Robot.btn.btn-primary.fixButton.btn-sm(type="button" style='margin-right: 8px;') >
+                    button#AccTurnRight-Robot.btn.btn-primary.fixButton.btn-sm(type="button") L
+                .clearfix(style='margin-bottom: 8px;')
+                .row(style='padding-left: 50%')
+                    button#NormalMoveBack-Robot.btn.btn-primary.fixButton.btn-sm(type="button")
+                        .glyphicon.glyphicon-chevron-down
+                .clearfix(style='margin-bottom: 8px;')
+                .row(style='padding-left: 50%')
+                    button#AccMoveBack-Robot.btn.btn-primary.fixButton.btn-sm(type="button") K
+                .clearfix(style='margin-bottom: 30px;')
+                .row
+                    .col-md-6
+                        h4.text-primary(style="text-align: center;") Navigation
+                    .col-md-6
+                        h4.text-primary(style="text-align: center;") Camera View
+                .clearfix(style='margin-bottom: 30px;')
+                .row
+                    .col-md-6
+                        #nav(style='margin-left: 20%;')
+                    .col-md-6
+                        #mjpeg(style='margin-left: 20%;')
+                //.row
+                //    .col-md-3.col-md-offset-1
+                //        h2.text-primary Operation
+                //    .col-md-3.col-md-offset-1
+                //        h2.text-primary Navigation
+                //    .col-md-3.col-md-offset-1
+                //        h2.text-primary Camera View
+                //.row
+                //    .col-md-4
+                //        .clearfix(style='margin-bottom: 40px;')
+                //        .row
+                //            .col-md-1.col-md-offset-4
+                //                button#AccMoveForward-Robot.btn.btn-success.btn-lg(type="button") +
+                //        .clearfix(style='margin-bottom: 20px;')
+                //        .row
+                //            .col-md-1.col-md-offset-4
+                //                button#NormalMoveForward-Robot.btn.btn-warning.btn-lg(type="button") D
+                //        .clearfix(style='margin-bottom: 40px;')
+                //        .row
+                //            .col-md-1
+                //                button#AccTurnLeft-Robot.btn.btn-success.btn-lg(type="button") +
+                //            .col-md-1.col-md-offset-1
+                //                button#NormalTurnLeft-Robot.btn.btn-warning.btn-lg(type="button") <
+                //            .col-md-1.col-md-offset-1
+                //                button#Park-Robot.btn.btn-danger.btn-lg(type="button") P
+                //            .col-md-1.col-md-offset-1
+                //                button#NormalTurnRight-Robot.btn.btn-warning.btn-lg(type="button") >
+                //            .col-md-1.col-md-offset-1
+                //                button#AccTurnRight-Robot.btn.btn-success.btn-lg(type="button") +
+                //        .clearfix(style='margin-bottom: 40px;')
+                //        .row
+                //            .col-md-1.col-md-offset-4
+                //                button#NormalMoveBack-Robot.btn.btn-warning.btn-lg(type="button") R
+                //        .clearfix(style='margin-bottom: 20px;')
+                //        .row
+                //            .col-md-1.col-md-offset-4
+                //                button#AccMoveBack-Robot.btn.btn-success.btn-lg(type="button") +
+                //    .col-md-4
+                //        .clearfix(style='margin-bottom: 40px;')
+                //        #nav
+                //    .col-md-4
+                //        .clearfix(style='margin-bottom: 40px;')
+                //        #mjpeg
+
+block script
+    script(type="text/javascript" src="http://static.robotwebtools.org/EaselJS/current/easeljs.min.js")
+    script(type="text/javascript", src="http://static.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js")
+    script(type="text/javascript", src="http://static.robotwebtools.org/roslibjs/current/roslib.min.js")
+    script(type="text/javascript" src="http://static.robotwebtools.org/ros2djs/current/ros2d.min.js")
+    script(type="text/javascript" src="http://static.robotwebtools.org/mjpegcanvasjs/current/mjpegcanvas.min.js")
+    script(src="/javascripts/robotOperation.js")
